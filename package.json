@@ -1,0 +1,27 @@
+{
+  "name": "hapi-api",
+  "version": "1.0.0",
+  "description": "Hapi.js Api example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doron2402/hapi-api.git"
+  },
+  "author": "Doron Segal doron2402@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/doron2402/hapi-api/issues"
+  },
+  "homepage": "https://github.com/doron2402/hapi-api#readme",
+  "dependencies": {
+    "glue": "^3.3.0",
+    "hapi": "^13.4.1",
+    "joi": "^8.4.2",
+    "lout": "^9.0.1",
+    "vision": "^4.1.0"
+  }
+}

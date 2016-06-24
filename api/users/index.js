@@ -12,8 +12,8 @@ exports.register = function (server, options, next) {
     config: {
       validate: {
         query: {
-          limit: Joi.number().default(20),
-          offset: Joi.number().default(1)
+          limit: Joi.number().min(1).max(100).default(20),
+          offset: Joi.number().min(1).max(100).default(1),
         }
       }
     },

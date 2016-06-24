@@ -2,17 +2,25 @@
 
 const manifest = {
     connections: [
-        {
-            port: 8000,
-            labels: ['web']
-        }
+      {
+        port: 8000,
+        labels: ['web']
+      }
     ],
     registrations: [
         {
-          plugin: 'lout'
+            plugin: 'vision'
         },
         {
-          plugin: 'vision'
+            plugin: {
+                register: 'visionary',
+                options: {
+                    engines: { 'html': 'handlebars' },
+                    path: 'web/views',
+                    partialsPath: 'web/partials',
+                    relativeTo: __dirname
+                }
+            }
         },
         {
           plugin: {
@@ -21,7 +29,19 @@ const manifest = {
               basePath: '/api'
             }
           }
-        }
+        },
+        {
+          plugin: {
+            register: './api/home',
+            options: {}
+          }
+        },
+        {
+          plugin: {
+            register: './web/login',
+            options: {}
+          }
+        },
     ]
 };
 

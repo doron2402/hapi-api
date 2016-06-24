@@ -9,26 +9,34 @@ exports.register = function (server, options, next) {
   server.route({
     method: 'GET',
     path: options.basePath + '/users',
-        config: {
-          validate: {
-            query: {
-              limit: Joi.number().default(20),
-              offset: Joi.number().default(1)
-            }
-          }
-        },
-        handler: function (request, reply) {
-          var limit = request.query.limit;
-          var page = request.query.page;
-
-          return reply({
-            code: 'ok',
-            limit,
-            offset,
-            body: {}
-          });
+    config: {
+      validate: {
+        query: {
+          limit: Joi.number().default(20),
+          offset: Joi.number().default(1)
         }
-    });
+      }
+    },
+    handler: function (request, reply) {
+      var limit = request.query.limit;
+      var offset = request.query.offset;
+
+      return reply({
+        code: 'ok',
+        limit: limit,
+        offset: offset,
+        body: {}
+      });
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: options.basePath + '/test',
+    handler: function (request, reply) {
+       reply.view('test', { title: 'testing app' });
+    }
+  })
 
 
     next();
@@ -36,5 +44,5 @@ exports.register = function (server, options, next) {
 
 
 exports.register.attributes = {
-    name: 'users'
+    name: 'api/users'
 };

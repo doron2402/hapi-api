@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "hapi": "^13.4.1",
     "joi": "^8.4.2",
     "lout": "^9.0.1",
-    "vision": "^4.1.0"
+    "vision": "^4.1.0",
+    "visionary": "^6.0.0"
   }
 }
